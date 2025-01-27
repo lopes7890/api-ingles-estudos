@@ -3,12 +3,12 @@ let browser; // Reutilizar a instância do browser
   
 export const translateWords = async (texto) => {
     try {
-      if (!browser) {
-        browser = await puppeteer.launch({
-          headless: true,
-          args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-        });
-      }
+        if (!browser) {
+            browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+            });
+        }
       const page = await browser.newPage();
   
       // Bloqueia imagens e scripts
