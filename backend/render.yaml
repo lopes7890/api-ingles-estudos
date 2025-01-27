@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: api-ingles-estudos
-    env: node
-    buildCommand: ./render-build.sh && npm install
-    startCommand: npm start

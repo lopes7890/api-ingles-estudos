@@ -1,8 +1,12 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import { generateWordPortuguese } from "./services/generatorWords.js";
 import { verifyWords } from "./services/verifyWords.js";
 
+dotenv.config();
+
+const port = process.env.PORT
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -34,6 +38,6 @@ app.post('/verify', async function(req, res){
     }
 })
 
-app.listen(9980, () => {
-    console.log('Servidor rodando em http://localhost:9980');
+app.listen(port, () => {
+    console.log('Servidor rodando em: ', port);
 });
