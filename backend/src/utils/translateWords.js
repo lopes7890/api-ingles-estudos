@@ -16,7 +16,7 @@ export const translateWords = async (texto) => {
                 '--single-process', // Útil para ambientes com poucos recursos (opcional)
                 '--no-zygote', // Melhora o desempenho em ambientes headless (opcional)
             ],
-            executablePath: '/usr/bin/chromium-browser', // Caminho do Chromium no sistema
+            executablePath: '/usr/bin/chromium', // Caminho do Chromium no sistema
         });
     }
       const page = await browser.newPage();
