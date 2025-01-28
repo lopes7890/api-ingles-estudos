@@ -6,13 +6,19 @@ let browser; // Reutilizar a instância do browser
 export const translateWords = async (texto) => {
     //console.log(process.env.PUPPETEER_EXECUTABLE_PATH)
     try {
-        if (!browser) {
-            browser = await puppeteer.launch({
-            headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-            executablePath: '/usr/bin/chromium-browser',
-            });
-        }
+      if (!browser) {
+        browser = await puppeteer.launch({
+            headless: true, // Modo headless (sem interface gráfica)
+            args: [
+                '--no-sandbox', // Desativa o sandbox (necessário em alguns ambientes)
+                '--disable-setuid-sandbox', // Desativa o sandbox de setuid
+                '--disable-dev-shm-usage', // Evita problemas de memória em ambientes limitados
+                '--single-process', // Útil para ambientes com poucos recursos (opcional)
+                '--no-zygote', // Melhora o desempenho em ambientes headless (opcional)
+            ],
+            executablePath: '/usr/bin/chromium-browser', // Caminho do Chromium no sistema
+        });
+    }
       const page = await browser.newPage();
   
       // Bloqueia imagens e scripts
