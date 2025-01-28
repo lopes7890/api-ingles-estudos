@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
-import dotenv from "dotenv";
-dotenv.config()
+/* import dotenv from "dotenv";
+dotenv.config() */
 let browser; // Reutilizar a instância do browser
   
 export const translateWords = async (texto) => {
@@ -10,7 +10,7 @@ export const translateWords = async (texto) => {
             browser = await puppeteer.launch({
             headless: true,
             args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-            executablePath: '/usr/bin/google-chrome-stable',
+            executablePath: '/usr/bin/chromium-browser',
             });
         }
       const page = await browser.newPage();
