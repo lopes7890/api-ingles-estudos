@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: api-ingles-estudos
-    env: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
