@@ -10,10 +10,7 @@ export const translateWords = async (texto) => {
             browser = await puppeteer.launch({
             headless: true,
             args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-            executablePath:
-            process.env.NODE_ENV === "production"
-              ? process.env.PUPPETEER_EXECUTABLE_PATH
-              : puppeteer.executablePath(),
+            executablePath: '/usr/bin/google-chrome-stable',
             });
         }
       const page = await browser.newPage();
