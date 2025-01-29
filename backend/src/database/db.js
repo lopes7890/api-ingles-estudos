@@ -1,4 +1,4 @@
-/* import mysql from "mysql2";
+import mysql from "mysql2";
 import "dotenv/config";
 
 
@@ -25,4 +25,4 @@ connection.getConnection((err, result) => {
     result.release()
 })
 
-export const db = connection.promise() */
+export const db = connection.promise()
