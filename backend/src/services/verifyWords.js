@@ -3,7 +3,7 @@ export const verifyWords = async (word, responseUser, res) => {
         
         let result = ""
 
-        if (responseUser.toLowerCase !== word.toLowerCase) {
+        if (responseUser.toLowerCase() !== word.toLowerCase()) {
             result = {message: "resposta errada!"}
         } else {
             result = {message: "resposta certa!"}
